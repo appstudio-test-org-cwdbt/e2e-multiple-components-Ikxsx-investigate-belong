@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: component-python
+  namespace: e2e-demo-cgkr
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - env:
+        - name: var_name
+          value: test
+        image: quay.io/codewindbtle/test-images@sha256:75ede613c21106c97bedb2d0d696fc8bd4e98e77de5105c4a7548a7309771727
+        name: container-image
+        resources: {}
+status: {}
